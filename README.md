@@ -27,7 +27,14 @@ For other capuchin mod creators to use mods used for this menu!
 <details>
   <summary><b>❓ Can I use your code?</b></summary>
 	
-Tbh this is a port of ii's stupid menu so sure why not
+**Of course!** But there’s a catch: you gotta play fair. **[GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.html) rules apply**, which means that if you use my code:  
+- Your project **must** also be open-source.  
+- Give credit where it's due.
+- No shady stuff.
+- **[Follow the license.](https://www.gnu.org/licenses/gpl-3.0.html)**
+
+> "You wouldn’t steal a method."<br>
+> [🎥 *(Or would you?)*](https://www.youtube.com/watch?v=zMBqPdMzZ9E)
 
 </details>
 
