@@ -1,7 +1,6 @@
 
 <p align="center">
-  <a href="#"><img src="Resources/GitHub/icon.png"></a>
-  <a href="#"><img src="Resources/GitHub/title.png"></a>
+  <a href="#"><img src="logo.png"></a>
 </p>
 
 ---
