@@ -11,7 +11,9 @@
 	<a href="https://discord.gg/iidk"><img src="https://img.shields.io/discord/1170093288557129748?label=discord&style=for-the-badge&color=blueviolet"></a>
 </p>
 
+# 🎩Tv's Dumb Panel
 ---
+
 
 Tv's Dumb Panel is a **dumb** port of II's Stupid Menu To Capuchin!
 
