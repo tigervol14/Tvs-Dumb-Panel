@@ -34,10 +34,13 @@
 		<Compile Include="Menu\Buttons.cs" />
 		<Compile Include="Menu\Main.cs" />
 		<Compile Include="Menu\Settings.cs" />
+		<Compile Include="Mods\Cosmetic.cs" />
 		<Compile Include="Mods\Fun.cs" />
 		<Compile Include="Mods\Global.cs" />
+		<Compile Include="Mods\Horror.cs" />
 		<Compile Include="Mods\Movement.cs" />
 		<Compile Include="Mods\Settings.cs" />
+		<Compile Include="Mods\Visual.cs" />
 		<Compile Include="Patches\AllPatches.cs" />
 		<Compile Include="PluginInfo.cs" />
 	</ItemGroup>

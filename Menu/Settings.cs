@@ -38,6 +38,6 @@ namespace TvsDumbPanel
         public static bool rightHanded = false;
         public static KeyCode keyboardButton = KeyCode.Z;
         public static Vector3 menuSize = new Vector3(0.1f, 1f, 1f); // Depth, Width, Height
-        public static int buttonsPerPage = 6;
+        public static int buttonsPerPage = 8;
     }
 }

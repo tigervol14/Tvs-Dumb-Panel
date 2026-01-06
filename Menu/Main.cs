@@ -47,9 +47,6 @@ namespace TvsDumbPanel.Menu
 
         public static void Prefix()
         {
-            // Initialize Menu
-            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
-            {
                 try
                 {
                     if (FusionHub.InRoom && FusionHub.Instance != null && FusionHub.Instance.SpawnedPlayers != null && FusionHub.Instance.SpawnedPlayers.Count != 0 && (_cachePlayerCount != FusionHub.Instance.SpawnedPlayers.Count || Core.localPlayer == null))
@@ -130,16 +127,7 @@ namespace TvsDumbPanel.Menu
                 {
                     MelonLogger.Error(string.Format("{0} // Error with executing mods at {1}: {2}", PluginInfo.Name, exc.StackTrace, exc.Message));
                 }
-            }
-            else
-            {
-                // fuck those mods if they aint in no modded lobby 😭😭
-                Il2CppLocomotion.Player.Instance.playerRigidbody.useGravity = true;
-                Il2CppLocomotion.Player.Instance.scale = 1;
-                Movement.SpeedBoostOff();
-                Movement.UpsideDownOff();
-                Movement.SpeedBoostOff();
-            }
+            
         }
         public static List<Classes.Button> currentButtons = new();
 

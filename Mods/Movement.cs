@@ -88,74 +88,90 @@ namespace TvsDumbPanel.Mods
         public static void Platforms()
         {
 
-            if (Controls.LGrip())
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
             {
-                if (platl == null)
+                if (Controls.LGrip())
                 {
-                    //platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    //platl.layer = LayerMask.NameToLayer("Grabable");
-                    //platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                    Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
-                    platl = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    platl.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
-                    FixStickyColliders(platl);
+                    if (platl == null)
+                    {
+                        //platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        //platl.layer = LayerMask.NameToLayer("Grabable");
+                        //platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                        Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
+                        platl = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        platl.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
+                        FixStickyColliders(platl);
 
-                    platl.transform.position = Il2CppLocomotion.Player.Instance.LeftCollider.transform.position;
-                    platl.transform.rotation = Il2CppLocomotion.Player.Instance.LeftCollider.transform.rotation;
+                        platl.transform.position = Il2CppLocomotion.Player.Instance.LeftCollider.transform.position;
+                        platl.transform.rotation = Il2CppLocomotion.Player.Instance.LeftCollider.transform.rotation;
 
-                    ColorChanger colorChanger = platl.AddComponent<ColorChanger>();
-                    colorChanger.Start();
+                        ColorChanger colorChanger = platl.AddComponent<ColorChanger>();
+                        colorChanger.Start();
+                    }
+
+                }
+                else
+                {
+                    if (platl != null)
+                    {
+                        UnityEngine.Object.Destroy(platl);
+                        platl = null;
+                    }
                 }
 
-            }
-            else
-            {
-                if (platl != null)
+
+                if (Controls.RGrip())
                 {
-                    UnityEngine.Object.Destroy(platl);
-                    platl = null;
+                    if (platr == null)
+                    {
+                        //platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        //platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                        //platr.layer = LayerMask.NameToLayer("Grabable");
+                        Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
+                        platr = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        platr.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
+                        FixStickyColliders(platr);
+
+                        platr.transform.position = Il2CppLocomotion.Player.Instance.RightCollider.transform.position; // - Vector3.down * 0.05f;
+                        platr.transform.rotation = Il2CppLocomotion.Player.Instance.RightCollider.transform.rotation;
+
+                        ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
+                        colorChanger.Start();
+                    }
+
+                }
+                else
+                {
+                    if (platr != null)
+                    {
+                        UnityEngine.Object.Destroy(platr);
+                        platr = null;
+                    }
                 }
             }
+            
 
-            if (Controls.RGrip())
-            {
-                if (platr == null)
-                {
-                    //platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    //platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                    //platr.layer = LayerMask.NameToLayer("Grabable");
-                    Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
-                    platr = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    platr.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
-                    FixStickyColliders(platr);
-
-                    platr.transform.position = Il2CppLocomotion.Player.Instance.RightCollider.transform.position; // - Vector3.down * 0.05f;
-                    platr.transform.rotation = Il2CppLocomotion.Player.Instance.RightCollider.transform.rotation;
-
-                    ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
-                    colorChanger.Start();
-                }
-
-            }
-            else
-            {
-                if (platr != null)
-                {
-                    UnityEngine.Object.Destroy(platr);
-                    platr = null;
-                }
-            }
+            
         }
 
 
         public static void SpeedBoostOn()
         {
-            if (!setOriginalClimbDrag)
+
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
             {
-                setOriginalClimbDrag = true;
+                if (!setOriginalClimbDrag)
+                {
+                    setOriginalClimbDrag = true;
+                    climbDragOriginal = Il2CppLocomotion.Player.Instance.climbDrag;
+                }
+                Il2CppLocomotion.Player.Instance.climbDrag = 1f;
+            }
+            else
+            {
                 climbDragOriginal = Il2CppLocomotion.Player.Instance.climbDrag;
             }
-            Il2CppLocomotion.Player.Instance.climbDrag = 1f;
+
         }
         public static void SpeedBoostOff()
         {
@@ -165,7 +181,15 @@ namespace TvsDumbPanel.Mods
 
         public static void ZeroGravOn()
         {
-            Il2CppLocomotion.Player.Instance.playerRigidbody.useGravity = false;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.playerRigidbody.useGravity = false;
+            }
+            else
+            {
+                Il2CppLocomotion.Player.Instance.playerRigidbody.useGravity = true;
+            }
+            
         }
         public static void ZeroGravOff()
         {
@@ -176,95 +200,117 @@ namespace TvsDumbPanel.Mods
         {
             if (Controls.XButton())
             {
-                Il2CppLocomotion.Player.Instance.transform.position += Il2CppLocomotion.Player.Instance.LeftHand.transform.forward * 0.5f;
+                if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+                {
+                    Il2CppLocomotion.Player.Instance.transform.position += Il2CppLocomotion.Player.Instance.LeftHand.transform.forward * 0.5f;
+                }
+                 
             }
             
         }
 
         public static void UpsideDownOn()
         {
-            Il2CppLocomotion.Player.Instance.transform.Rotate(Vector3.right, 180, Space.Self);
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.transform.Rotate(Vector3.right, 180, Space.Self);
+            }
+            else
+            {
+                Il2CppLocomotion.Player.Instance.transform.Rotate(Vector3.right, -180, Space.Self);
+            }
         }
         public static void UpsideDownOff()
         {
-            Il2CppLocomotion.Player.Instance.transform.Rotate(Vector3.right, -180, Space.Self);
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.transform.Rotate(Vector3.right, -180, Space.Self);
+            }
+            else
+            {
+                Il2CppLocomotion.Player.Instance.transform.Rotate(Vector3.right, 180, Space.Self);
+            }
         }
 
 
         public static void Noclip()
         {
-            if (Controls.AButton())
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
             {
-                MeshCollider[] meshColliders = Resources.FindObjectsOfTypeAll<MeshCollider>();
-                foreach (MeshCollider MeshCol in meshColliders)
+
+                if (Controls.AButton())
                 {
-                    MeshCol.enabled = false;
+                    MeshCollider[] meshColliders = Resources.FindObjectsOfTypeAll<MeshCollider>();
+                    foreach (MeshCollider MeshCol in meshColliders)
+                    {
+                        MeshCol.enabled = false;
+                    }
                 }
-            }
-            else
-            {
-                MeshCollider[] meshColliders = Resources.FindObjectsOfTypeAll<MeshCollider>();
-                foreach (MeshCollider MeshCol in meshColliders)
+                else
                 {
-                    MeshCol.enabled = true;
-                }
-            }
-
-            if (Controls.LGrip())
-            {
-                if (platl == null)
-                {
-                    //platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    //platl.layer = LayerMask.NameToLayer("Grabable");
-                    //platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                    Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
-                    platl = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    platl.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
-                    FixStickyColliders(platl);
-
-                    platl.transform.position = Il2CppLocomotion.Player.Instance.LeftCollider.transform.position;
-                    platl.transform.rotation = Il2CppLocomotion.Player.Instance.LeftCollider.transform.rotation;
-
-                    ColorChanger colorChanger = platl.AddComponent<ColorChanger>();
-                    colorChanger.Start();
+                    MeshCollider[] meshColliders = Resources.FindObjectsOfTypeAll<MeshCollider>();
+                    foreach (MeshCollider MeshCol in meshColliders)
+                    {
+                        MeshCol.enabled = true;
+                    }
                 }
 
-            }
-            else
-            {
-                if (platl != null)
+                if (Controls.LGrip())
                 {
-                    UnityEngine.Object.Destroy(platl);
-                    platl = null;
+                    if (platl == null)
+                    {
+                        //platl = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        //platl.layer = LayerMask.NameToLayer("Grabable");
+                        //platl.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                        Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
+                        platl = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        platl.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
+                        FixStickyColliders(platl);
+
+                        platl.transform.position = Il2CppLocomotion.Player.Instance.LeftCollider.transform.position;
+                        platl.transform.rotation = Il2CppLocomotion.Player.Instance.LeftCollider.transform.rotation;
+
+                        ColorChanger colorChanger = platl.AddComponent<ColorChanger>();
+                        colorChanger.Start();
+                    }
+
                 }
-            }
-
-            if (Controls.RGrip())
-            {
-                if (platr == null)
+                else
                 {
-                    //platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    //platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
-                    //platr.layer = LayerMask.NameToLayer("Grabable");
-                    Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
-                    platr = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    platr.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
-                    FixStickyColliders(platr);
-
-                    platr.transform.position = Il2CppLocomotion.Player.Instance.RightCollider.transform.position; // - Vector3.down * 0.05f;
-                    platr.transform.rotation = Il2CppLocomotion.Player.Instance.RightCollider.transform.rotation;
-
-                    ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
-                    colorChanger.Start();
+                    if (platl != null)
+                    {
+                        UnityEngine.Object.Destroy(platl);
+                        platl = null;
+                    }
                 }
 
-            }
-            else
-            {
-                if (platr != null)
+                if (Controls.RGrip())
                 {
-                    UnityEngine.Object.Destroy(platr);
-                    platr = null;
+                    if (platr == null)
+                    {
+                        //platr = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        //platr.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                        //platr.layer = LayerMask.NameToLayer("Grabable");
+                        Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
+                        platr = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        platr.transform.localScale = new Vector3(0.333f, 0.333f, 0.333f);
+                        FixStickyColliders(platr);
+
+                        platr.transform.position = Il2CppLocomotion.Player.Instance.RightCollider.transform.position; // - Vector3.down * 0.05f;
+                        platr.transform.rotation = Il2CppLocomotion.Player.Instance.RightCollider.transform.rotation;
+
+                        ColorChanger colorChanger = platr.AddComponent<ColorChanger>();
+                        colorChanger.Start();
+                    }
+
+                }
+                else
+                {
+                    if (platr != null)
+                    {
+                        UnityEngine.Object.Destroy(platr);
+                        platr = null;
+                    }
                 }
             }
 

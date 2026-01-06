@@ -36,32 +36,135 @@ namespace TvsDumbPanel.Mods
     {
         public static void Size2() 
         {
-            Il2CppLocomotion.Player.Instance.scale = 2f;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.scale = 2f;
+            }
+                
         }
 
         public static void Size1half() 
         {
-            Il2CppLocomotion.Player.Instance.scale = 1.5f;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.scale = 1.5f;
+            }
         }
 
         public static void SizeNormal() 
         {
-            Il2CppLocomotion.Player.Instance.scale = 1f;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.scale = 1f;
+            }
         }
         public static void SizeABitSmall() 
         {
-            Il2CppLocomotion.Player.Instance.scale = 0.75f;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.scale = 0.75f;
+            }
         }
 
         public static void Smol() 
         {
-            Il2CppLocomotion.Player.Instance.scale = 0.5f;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.scale = 0.5f;
+            }
         }
 
         public static void pixel()
         {
-            // HOLY SHIT BRO IS SO SMALL :sob:
-            Il2CppLocomotion.Player.Instance.scale = 0.25f;
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppLocomotion.Player.Instance.scale = 0.25f;
+            }
+        }
+
+        public static void Nuke()
+        {
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppMod.BombManager.Instance.LaunchMissile(true);
+            }
+        }
+        public static void Missle()
+        {
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                Il2CppMod.BombManager.Instance.LaunchMissile(false);
+            }
+        }
+
+        public static void OGZeroGOn()
+        {
+            if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
+            {
+                GameObject.Find("Global/Levels/Zero Core/Zero G Trigger").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/MapMesh").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/TopRedZone").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/ScienceRoom").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G").GetComponent<MeshRenderer>().enabled = false;
+                GameObject.Find("Global/Levels/Zero Core/Zero G").GetComponent<MeshCollider>().enabled = false;
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (1)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (2)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (3)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (4)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (5)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (6)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (7)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (8)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (9)").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/Zero Gravity Music").SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("Global/Levels/Zero Core/Zero G Trigger").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/MapMesh").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/TopRedZone").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/ScienceRoom").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G").GetComponent<MeshRenderer>().enabled = true;
+                GameObject.Find("Global/Levels/Zero Core/Zero G").GetComponent<MeshCollider>().enabled = true;
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (1)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (2)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (3)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (4)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (5)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (6)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (7)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (8)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (9)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/Zero Gravity Music").SetActive(true);
+            }
+           
+        }
+
+        public static void OGZeroGOff()
+        {
+                GameObject.Find("Global/Levels/Zero Core/Zero G Trigger").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/MapMesh").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/TopRedZone").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/ScienceRoom").SetActive(false);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G").GetComponent<MeshRenderer>().enabled = true;
+                GameObject.Find("Global/Levels/Zero Core/Zero G").GetComponent<MeshCollider>().enabled = true;
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (1)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (2)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (3)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (4)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (5)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (6)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (7)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (8)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/ZeroGProps/DirtPile (9)").SetActive(true);
+                GameObject.Find("Global/Levels/Zero Core/Zero G/Zero Gravity Music").SetActive(true);
+
         }
     }
 }
