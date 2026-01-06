@@ -13,7 +13,7 @@
 
 ---
 
-# 🎩Tv's Dumb Panel
+# 🎩Tv's Dumb Panel!!!!
 
 Tv's Dumb Panel is a **dumb** port of II's Stupid Menu To Capuchin!
 
