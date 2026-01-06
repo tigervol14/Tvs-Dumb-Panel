@@ -6,8 +6,8 @@
 ---
 
 <p align="center">
-	<a href="https://github.com/iiDk-the-actual/iis.Stupid.Menu/releases"><img src="https://img.shields.io/github/v/release/iiDk-the-actual/iis.Stupid.Menu?label=version&style=for-the-badge"></a>
-	<a href="https://github.com/iiDk-the-actual/iis.Stupid.Menu/releases/latest"><img src="https://img.shields.io/github/downloads/iiDk-the-actual/iis.Stupid.Menu/latest/iis_Stupid_Menu.dll?style=for-the-badge"></a>
+	<a href="https://github.com/tigervol14/Tvs-Dumb-Panel/releases"><img src="https://img.shields.io/github/v/release/iiDk-the-actual/iis.Stupid.Menu?label=version&style=for-the-badge"></a>
+	<a href="https://github.com/tigervol14/Tvs-Dumb-Panel/releases/latest"><img src="https://img.shields.io/github/downloads/iiDk-the-actual/iis.Stupid.Menu/latest/iis_Stupid_Menu.dll?style=for-the-badge"></a>
 	<a href="https://discord.gg/Y8B3U4zpFZ"><img src="https://img.shields.io/discord/1457781722593628254?label=discord&style=for-the-badge&color=blueviolet"></a>
 </p>
 
