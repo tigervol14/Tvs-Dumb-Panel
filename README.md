@@ -54,3 +54,11 @@ lwk all headsets that support steam work
 
 </details>
 
+<details>
+  <summary><b>Credits ig</b></summary>
+	
+yea uhhh iidk for original template and shit
+and hansolo1000falcon for some codde (he allowed me)
+
+</details>
+
