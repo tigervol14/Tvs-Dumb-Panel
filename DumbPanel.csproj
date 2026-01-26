@@ -26,6 +26,7 @@
 		<Compile Include="Classes\ButtonCollider.cs" />
 		<Compile Include="Classes\ButtonInfo.cs" />
 		<Compile Include="Classes\ColorChanger.cs" />
+		<Compile Include="Classes\ControllerInput.cs" />
 		<Compile Include="Classes\ExtGradient.cs" />
 		<Compile Include="Classes\RigManager.cs" />
 		<Compile Include="Classes\TimedBehaviour.cs" />
@@ -38,6 +39,7 @@
 		<Compile Include="Mods\Fun.cs" />
 		<Compile Include="Mods\Global.cs" />
 		<Compile Include="Mods\Horror.cs" />
+		<Compile Include="Mods\Banapuchin.cs" />
 		<Compile Include="Mods\Movement.cs" />
 		<Compile Include="Mods\Settings.cs" />
 		<Compile Include="Mods\Visual.cs" />
@@ -77,7 +79,7 @@
 	    <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Capuchin\MelonLoader\net6\bHapticsLib.dll</HintPath>
 	  </Reference>
 	  <Reference Include="CaputillaMelonLoader">
-	    <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Capuchin\Mods\CaputillaMelonLoader.dll</HintPath>
+	    <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Capuchin\Mods\CaputillaMelonLoader\CaputillaMelonLoader.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Iced">
 	    <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Capuchin\MelonLoader\net6\Iced.dll</HintPath>

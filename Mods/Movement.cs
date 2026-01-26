@@ -203,6 +203,7 @@ namespace TvsDumbPanel.Mods
                 if (CaputillaMelonLoader.CaputillaHub.InModdedRoom)
                 {
                     Il2CppLocomotion.Player.Instance.transform.position += Il2CppLocomotion.Player.Instance.LeftHand.transform.forward * 0.5f;
+                    Il2CppLocomotion.Player.Instance.playerRigidbody.velocity = Vector3.zero;
                 }
                  
             }

@@ -93,6 +93,16 @@ namespace TvsDumbPanel.Menu
                 new ButtonInfo { buttonText = "Go Back", method = delegate { SettingsMods.GoTo(0); }, isTogglable = false},
                 new ButtonInfo { buttonText = "TV14", method = delegate { Global.TestButton(); }, isTogglable = false, toolTip = "TV14 is the creator of the menu and is the lead developer."},
                 new ButtonInfo { buttonText = "SomeGuyLol", method = delegate { Global.TestButton(); }, isTogglable = false, toolTip = "SomeGuyLol Helped me create this menu and also made the port of II's Stupid template to capuchin."},
+                new ButtonInfo { buttonText = "HanSolo1000Falcon", method = delegate { Global.TestButton(); }, isTogglable = false, toolTip = "Allowed me to use some code from Banapuchin so thats cewl."},
+
+            },
+
+            new List<ButtonInfo> // index 9 (Banapuchin Mods)
+            {
+
+                new ButtonInfo { buttonText = "Go Back", method = delegate { SettingsMods.GoTo(0); }, isTogglable = false},
+                new ButtonInfo { buttonText = "What is this?", method = delegate { Global.TestButton(); }, isTogglable = false, toolTip = "i added this cause hansolo allowed us to."},
+                new ButtonInfo { buttonText = "Joystick Fly", method = delegate { Mods.Banapuchin.JoystickFly(); }, isTogglable = false},
 
             },
         };
